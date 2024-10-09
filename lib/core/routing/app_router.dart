@@ -28,9 +28,12 @@ class AppRouter {
         case Routes.loginScreen:
         return CustomPageRoute(widget: const LoginScreen());
         case Routes.homeScreen:
-        return CustomPageRoute(widget: const HomeScreen());
+          final arguments = settings.arguments as Map<String, String>;
+
+          return CustomPageRoute(widget:  HomeScreen(studentName:  arguments['studentName']!,));
         case Routes.rootScreen:
-        return CustomPageRoute(widget: const RootScreen());
+          final arguments = settings.arguments as Map<String, String>;
+        return CustomPageRoute(widget:  RootScreen(studentName:  arguments['studentName']!,));
         case Routes.otpScreen:
         return CustomPageRoute(widget: const OtpScreen());
       case Routes.chooseAccountScreen:

@@ -20,7 +20,9 @@ class StudentListView extends StatelessWidget {
                 gradeType: FakeStudentsModel.fakeStudents[index].gradeType,
                 gradeYear: FakeStudentsModel.fakeStudents[index].highGradeLevel!,
                 onPressed: (){
-                  Navigator.popAndPushNamed(context, Routes.rootScreen);
+                  Navigator.popAndPushNamed(context, Routes.rootScreen,arguments: {
+                    'studentName': FakeStudentsModel.fakeStudents[index].name,
+                  });
                 }
             ),
           );

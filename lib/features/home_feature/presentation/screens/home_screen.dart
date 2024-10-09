@@ -7,8 +7,8 @@ import 'package:skkoolio/features/home_feature/presentation/widgets/home_body.da
 import '../../../../core/utils/app_strings.dart';
 
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
+  const HomeScreen({super.key, required this.studentName});
+final String studentName;
   @override
   Widget build(BuildContext context) {
     final homeKey = GlobalKey<ScaffoldState>();
@@ -19,8 +19,8 @@ class HomeScreen extends StatelessWidget {
         drawer: const CustomDrawer(),
         appBar: AppBar(
           backgroundColor: AppColors.mainColor,
-          title: const CustomTextWidget(
-            title: AppStrings.studentDashBoard,
+          title:  const CustomTextWidget(
+            title:AppStrings.studentDashBoard ,
             fontSize: 20,
             fontWeight: FontWeight.w600,
           ),
@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
             SizedBox(width: 10,)
           ],
         ),
-        body: const HomeBody(),
+        body:  HomeBody(studentName: studentName,),
       ),
     );
   }

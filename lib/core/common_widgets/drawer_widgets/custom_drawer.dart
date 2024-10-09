@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:skkoolio/core/common_widgets/custom_dialog.dart';
 import 'package:skkoolio/core/common_widgets/custom_text_widget.dart';
 import 'package:skkoolio/core/utils/app_colors.dart';
 import 'package:skkoolio/core/common_widgets/drawer_widgets/drawer_item.dart';
@@ -28,6 +29,8 @@ class CustomDrawer extends StatelessWidget {
         img: AssetsManager.settings, title: 'Settings', Routes.settingsScreen),
     DrawerItemModel(
         img: AssetsManager.convertCard, title: 'Our Mission', Routes.ourMissionScreen),
+    DrawerItemModel(
+        img: AssetsManager.convertCard, title: 'Student', Routes.chooseAccountScreen),
   ];
 
   @override
@@ -71,13 +74,29 @@ class CustomDrawer extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            ListTile(
-              leading: SvgPicture.asset(AssetsManager.logOut),
-              title: const CustomTextWidget(
-                title: 'Logout',
-                fontSize: 16,
-                fontWeight: FontWeight.w400,
-                color: Colors.black,
+            GestureDetector(
+              onTap: (){
+                showCustomDialog(
+                    context, title: 'Logout',
+                    content: 'Are you sure you want to logout?',
+                    yesText: 'Yes, Logout',
+                    noText: 'No, Cancel',
+                    onYesPressed: (){
+                      Navigator.pushReplacementNamed(context,Routes.loginScreen);
+                    },
+                    onNoPressed: (){
+                      Navigator.of(context).pop();
+                    }
+                );
+              },
+              child: ListTile(
+                leading: SvgPicture.asset(AssetsManager.logOut),
+                title: const CustomTextWidget(
+                  title: 'Logout',
+                  fontSize: 16,
+                  fontWeight: FontWeight.w400,
+                  color: Colors.black,
+                ),
               ),
             ),
             const SizedBox(

@@ -9,19 +9,14 @@ import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 
 
 class RootScreen extends StatefulWidget {
-  const RootScreen({super.key});
-
+  const RootScreen({super.key, required this.studentName});
+final String studentName;
   @override
   State<RootScreen> createState() => _RootScreenState();
 }
 
 class _RootScreenState extends State<RootScreen> {
-  List<Widget> pages = [
-    const HomeScreen(),
-    const NotificationScreen(),
-    const MessagesScreen(),
-    const AssignmentScreen()
-  ];
+
 
   int selectedIndex = 0;
   late PageController pageController;
@@ -34,8 +29,13 @@ class _RootScreenState extends State<RootScreen> {
 
   @override
   Widget build(BuildContext context) {
+    List<Widget> pages = [
+      HomeScreen(studentName: widget.studentName,),
+      const NotificationScreen(),
+      const MessagesScreen(),
+      const AssignmentScreen()
+    ];
     return Scaffold(
-
       body: PageView(
         physics: const NeverScrollableScrollPhysics(),
         controller:pageController ,

@@ -20,6 +20,8 @@ class AssetsManager {
   static String logOut = 'assets/images/logout.svg';
   static String settings = 'assets/images/setting-2.svg';
   static String wallet = 'assets/images/wallet-2.svg';
+  static String student = 'assets/images/attendance-svgrepo-com.svg';
+  static String attendance = 'assets/images/attendance-svgrepo-com.svg';
 
   ///lotties
  static String loading = 'assets/lotties/loading dots.json';

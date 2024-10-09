@@ -8,8 +8,8 @@ import 'package:skkoolio/features/home_feature/presentation/widgets/subject_perc
 import '../../../../core/utils/app_colors.dart';
 
 class HomeBody extends StatelessWidget {
-  const HomeBody({super.key});
-
+  const HomeBody({super.key, required this.studentName});
+final String studentName;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -46,16 +46,17 @@ class HomeBody extends StatelessWidget {
                   width: 15.w,
                 ),
                 RichText(
-                    text: const TextSpan(children: [
-                      TextSpan(
+                    text:  TextSpan(children: [
+                      const TextSpan(
                           text: AppStrings.student,
                           style: TextStyle(
                               color: AppColors.greyColor,
-                              fontSize: 18,
+                              fontSize: 16,
                               fontWeight: FontWeight.w400)),
+                      const WidgetSpan(child: SizedBox(width: 5,)),
                       TextSpan(
-                          text: ' pedro',
-                          style: TextStyle(
+                          text:  studentName,
+                          style: const TextStyle(
                               color: Colors.black,
                               fontSize: 18,
                               fontWeight: FontWeight.w500)),
