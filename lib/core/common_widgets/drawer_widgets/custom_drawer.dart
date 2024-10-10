@@ -17,8 +17,8 @@ class CustomDrawer extends StatelessWidget {
   static List<DrawerItemModel> items = [
     DrawerItemModel(
         img: AssetsManager.dashboard,
-        title: 'DashBoard',
-        Routes.dashBoardScreen),
+        title: 'Messages',
+        Routes.messagesScreen),
     DrawerItemModel(
         img: AssetsManager.chart, title: 'Attendance', Routes.attendanceScreen),
     DrawerItemModel(

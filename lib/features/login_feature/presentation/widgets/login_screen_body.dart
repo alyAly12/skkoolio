@@ -22,8 +22,8 @@ class LoginScreenBody extends StatefulWidget {
 class _LoginScreenBodyState extends State<LoginScreenBody> {
   final TextEditingController phoneController = TextEditingController();
   final formKey = GlobalKey<FormState>();
-
   Color buttonColor = AppColors.greyColor;
+
   @override
   void initState() {
     super.initState();

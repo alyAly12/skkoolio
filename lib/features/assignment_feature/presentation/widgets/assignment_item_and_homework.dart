@@ -71,20 +71,26 @@ class AssignmentItemAndHomeWork extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: AppColors.mainColor,
-                    shape: RoundedRectangleBorder(
-                        side: const BorderSide(
-                            color: AppColors.lightTitleColor, width: 1),
-                        borderRadius: BorderRadius.circular(10)),
-                  ),
-                  onPressed: onPressed,
-                  child: const CustomTextWidget(
-                    title: AppStrings.viewDetails,
-                    fontSize: 15,
-                    color: AppColors.lightTitleColor,
-                  ))
+              Expanded(
+                child: Center(
+                  child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: AppColors.mainColor,
+                        shape: RoundedRectangleBorder(
+                            side: const BorderSide(
+                                color: AppColors.lightTitleColor, width: 1),
+                            borderRadius: BorderRadius.circular(10)),
+                      ),
+                      onPressed: onPressed,
+                      child: const FittedBox(
+                        child: CustomTextWidget(
+                          title: AppStrings.viewDetails,
+                          fontSize: 15,
+                          color: AppColors.lightTitleColor,
+                        ),
+                      )),
+                ),
+              )
             ],
           ),
         ),

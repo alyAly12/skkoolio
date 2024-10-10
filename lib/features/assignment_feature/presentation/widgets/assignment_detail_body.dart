@@ -21,7 +21,6 @@ class AssignmentDetailBody extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.h),
       child: SingleChildScrollView(
-        reverse: true,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:skkoolio/features/messages_feature/presentation/widgets/message_fake_model.dart';
 
+import 'message_fake_model.dart';
 import 'message_item.dart';
 
 class MessageItemList extends StatelessWidget {

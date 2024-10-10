@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:skkoolio/core/routing/routes.dart';
 import 'package:skkoolio/features/assignment_feature/presentation/screens/assignments_details.dart';
-import 'package:skkoolio/features/drawer_screens/dashboard_feature/presentation/screen/dashboard_screen.dart';
 import 'package:skkoolio/features/login_feature/presentation/screens/login_screen.dart';
 import '../../features/assignment_feature/presentation/screens/assignment_screen.dart';
 import '../../features/choose_account_feature/presentation/screens/choose_account_screen.dart';
 import '../../features/drawer_screens/attendance_feature/presentation/screens/attendance_screen.dart';
+import '../../features/drawer_screens/messages_feature/presentation/screens/messages_screen.dart';
 import '../../features/drawer_screens/our_mission_feature/presentation/screen/our_mission_screen.dart';
 import '../../features/drawer_screens/settings_feature/presentation/screens/settings_screen.dart';
 import '../../features/drawer_screens/student_behavior_feature/presentation/screen/student_behavior_screen.dart';
+import '../../features/events_feature/presentation/screens/event_detail_screen.dart';
+import '../../features/events_feature/presentation/screens/events_screen.dart';
 import '../../features/home_feature/presentation/screens/home_screen.dart';
 import '../../features/login_feature/presentation/screens/otp_screen.dart';
-import '../../features/messages_feature/presentation/screens/messages_screen.dart';
 import '../../features/notification_feature/presentation/screens/notification_screen.dart';
 import '../../features/onboarding_feature/presentation/screen/onboarding_screen.dart';
 import '../../features/splash_feature/presentation/screens/splash_screen.dart';
@@ -47,8 +48,6 @@ class AppRouter {
         case Routes.assignmentDetailsScreen:
           final arguments = settings.arguments as Map<String, String>;
         return CustomPageRoute(widget:   AssignmentsDetails(title:arguments['title']! , date:arguments['date']! , status:arguments['status']! ));
-        case Routes.dashBoardScreen:
-        return CustomPageRoute(widget: const DashboardScreen());
         case Routes.attendanceScreen:
         return CustomPageRoute(widget: const AttendanceScreen());
         case Routes.studentBehaviorScreen:
@@ -57,6 +56,11 @@ class AppRouter {
         return CustomPageRoute(widget: const SettingsScreen());
         case Routes.ourMissionScreen:
         return CustomPageRoute(widget: const OurMissionScreen());
+        case Routes.eventsScreen:
+        return CustomPageRoute(widget: const EventsScreen());
+        case Routes.eventDetailScreen:
+          final arguments = settings.arguments as Map<String, String>;
+        return CustomPageRoute(widget:EventDetailScreen(img: arguments['img']!, title: arguments['title']!, titleBody: arguments['titleBody']!));
 
       default:
         return null;

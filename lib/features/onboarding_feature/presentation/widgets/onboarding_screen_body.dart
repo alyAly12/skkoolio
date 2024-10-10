@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_onboarding_slider/flutter_onboarding_slider.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:skkoolio/core/utils/app_colors.dart';
 import 'package:skkoolio/core/utils/app_strings.dart';
@@ -54,19 +55,19 @@ class OnboardingScreenBody extends StatelessWidget {
       background: [
         SvgPicture.asset(
           AssetsManager.onboard1,
-          height: 400,
+          height: 370.h,
         ),
         SvgPicture.asset(
           AssetsManager.onboard2,
-          height: 400,
+          height: 370.h,
         ),
         SvgPicture.asset(
           AssetsManager.onboard3,
-          height: 400,
+          height: 370.h,
         ),
         SvgPicture.asset(
           AssetsManager.onboard4,
-          height: 400,
+          height: 370.h,
         ),
       ],
       speed: 1.8,
@@ -88,7 +89,7 @@ class OnboardingScreenBody extends StatelessWidget {
                 maxLines: 5,
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Text(
                 AppStrings.welcomeBody,
@@ -115,7 +116,7 @@ class OnboardingScreenBody extends StatelessWidget {
                 maxLines: 5,
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Text(
                 AppStrings.stayConnectedBody,
@@ -142,7 +143,7 @@ class OnboardingScreenBody extends StatelessWidget {
                 maxLines: 5,
               ),
               SizedBox(
-                height: 20,
+                height: 10,
               ),
               Text(
                 AppStrings.trackProgressBody,
@@ -168,7 +169,7 @@ class OnboardingScreenBody extends StatelessWidget {
                 style: TextStyle(fontSize: 18),
                 maxLines: 5,
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 10),
               Text(
                 AppStrings.letsStartBody,
                 style: TextStyle(fontSize: 15),

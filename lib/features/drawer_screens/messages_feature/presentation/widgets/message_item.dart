@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/common_widgets/custom_text_widget.dart';
-import '../../../../core/utils/app_colors.dart';
+import '../../../../../core/common_widgets/custom_text_widget.dart';
+import '../../../../../core/utils/app_colors.dart';
+
+
 
 class MessageItem extends StatelessWidget {
   const MessageItem(

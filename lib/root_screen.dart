@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:skkoolio/core/utils/app_colors.dart';
 import 'package:skkoolio/features/assignment_feature/presentation/screens/assignment_screen.dart';
+import 'package:skkoolio/features/events_feature/presentation/screens/events_screen.dart';
 import 'package:skkoolio/features/home_feature/presentation/screens/home_screen.dart';
-import 'package:skkoolio/features/messages_feature/presentation/screens/messages_screen.dart';
 import 'package:skkoolio/features/notification_feature/presentation/screens/notification_screen.dart';
 import 'package:water_drop_nav_bar/water_drop_nav_bar.dart';
 
@@ -32,7 +32,7 @@ class _RootScreenState extends State<RootScreen> {
     List<Widget> pages = [
       HomeScreen(studentName: widget.studentName,),
       const NotificationScreen(),
-      const MessagesScreen(),
+      const EventsScreen(),
       const AssignmentScreen()
     ];
     return Scaffold(
@@ -42,6 +42,7 @@ class _RootScreenState extends State<RootScreen> {
         children: pages,
       ),
       bottomNavigationBar: WaterDropNavBar(
+
         backgroundColor: AppColors.mainColor,
         waterDropColor: AppColors.primaryColor,
         bottomPadding: 8,
@@ -54,9 +55,9 @@ class _RootScreenState extends State<RootScreen> {
                 filledIcon: Ionicons.notifications_sharp,
                 outlinedIcon: Ionicons.notifications_outline),
             BarItem(
-              filledIcon: Ionicons.mail_open_sharp,
-              outlinedIcon: Ionicons.mail_unread_outline,
-            ),
+                filledIcon: Ionicons.calendar_number_sharp,
+                outlinedIcon: Ionicons.calendar_number_outline),
+
             BarItem(
               filledIcon: Ionicons.book_sharp,
               outlinedIcon: Ionicons.book_outline,
