@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:skkoolio/features/home_feature/presentation/widgets/fake_assignment_model.dart';
 
+import '../../../../core/routing/routes.dart';
 import 'assignment_item.dart';
 
 
@@ -16,6 +17,20 @@ class AssignmentItemList extends StatelessWidget {
         title: FakeAssignmentModel.fakeAssignmentList[index].subjectAssignment,
         date: FakeAssignmentModel.fakeAssignmentList[index].date,
         status: FakeAssignmentModel.fakeAssignmentList[index].status,
+        onTap: () {
+          Navigator.pushNamed(context, Routes.assignmentDetailsScreen,
+              arguments:{
+                'title': FakeAssignmentModel
+                    .fakeAssignmentList[index].subjectAssignment,
+                'date': FakeAssignmentModel
+                    .fakeAssignmentList[index].date,
+                'status': FakeAssignmentModel
+                    .fakeAssignmentList[index].status
+              }
+
+
+          );
+        },
       );
     });
   }
