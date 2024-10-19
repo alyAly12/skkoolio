@@ -77,7 +77,7 @@ class CustomDrawer extends StatelessWidget {
             GestureDetector(
               onTap: (){
                 showCustomDialog(
-                    context, title: 'Logout',
+                    context, title: 'logout',
                     content: 'Are you sure you want to logout?',
                     yesText: 'Yes, Logout',
                     noText: 'No, Cancel',
@@ -91,8 +91,8 @@ class CustomDrawer extends StatelessWidget {
               },
               child: ListTile(
                 leading: SvgPicture.asset(AssetsManager.logOut),
-                title: const CustomTextWidget(
-                  title: 'Logout',
+                title:   CustomTextWidget(
+                  title: 'logout',
                   fontSize: 16,
                   fontWeight: FontWeight.w400,
                   color: Colors.black,

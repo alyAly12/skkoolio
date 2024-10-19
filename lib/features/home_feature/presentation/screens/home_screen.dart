@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:skkoolio/core/common_widgets/custom_text_widget.dart';
 import 'package:skkoolio/core/utils/app_colors.dart';
@@ -11,6 +12,13 @@ class HomeScreen extends StatelessWidget {
 final String studentName;
   @override
   Widget build(BuildContext context) {
+    void _changeLanguage() {
+      if (context.locale ==  const Locale('en')) {
+        context.setLocale(const Locale('ar'));
+      } else {
+        context.setLocale(const Locale('en'));
+      }
+    }
     final homeKey = GlobalKey<ScaffoldState>();
     return SafeArea(
       child: Scaffold(
@@ -24,13 +32,11 @@ final String studentName;
             fontSize: 20,
             fontWeight: FontWeight.w600,
           ),
-          actions:const [
-            CircleAvatar(
-              backgroundColor: AppColors.greyColor,
-              radius: 18,
-              child: Center(child: Icon(Icons.person,color: Colors.white,size: 30,)),
-            ),
-            SizedBox(width: 10,)
+          actions: [
+            ElevatedButton(onPressed: (){
+              _changeLanguage();
+            }, child:const Icon(Icons.language_outlined) ),
+            const SizedBox(width: 10,)
           ],
         ),
         body:  HomeBody(studentName: studentName,),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:skkoolio/features/drawer_screens/settings_feature/presentation/widgets/setting_screen_body.dart';
 
 import '../../../../../core/common_widgets/custom_text_widget.dart';
 import '../../../../../core/utils/app_colors.dart';
@@ -24,7 +25,7 @@ class SettingsScreen extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-
+        body: const SettingScreenBody(),
       ),
     );
   }

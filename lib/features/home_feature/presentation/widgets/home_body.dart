@@ -1,7 +1,7 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skkoolio/core/common_widgets/custom_text_widget.dart';
-import 'package:skkoolio/core/utils/app_strings.dart';
 import 'package:skkoolio/features/home_feature/presentation/widgets/assignment_item_list.dart';
 import 'package:skkoolio/features/home_feature/presentation/widgets/subject_percent_item_list.dart';
 
@@ -17,9 +17,9 @@ final String studentName;
 
       child:  CustomScrollView(
         slivers: [
-          const SliverToBoxAdapter(
+           SliverToBoxAdapter(
             child: CustomTextWidget(
-              title: AppStrings.progressOverview,
+              title: 'progressOverview'.tr(),
               fontWeight: FontWeight.w600,
             ),
           ),
@@ -47,9 +47,9 @@ final String studentName;
                 ),
                 RichText(
                     text:  TextSpan(children: [
-                      const TextSpan(
-                          text: AppStrings.student,
-                          style: TextStyle(
+                       TextSpan(
+                          text: 'student'.tr(),
+                          style: const TextStyle(
                               color: AppColors.greyColor,
                               fontSize: 16,
                               fontWeight: FontWeight.w400)),
@@ -77,9 +77,9 @@ final String studentName;
               height: 20.h,
             ),
           ),
-          const SliverToBoxAdapter(
+           SliverToBoxAdapter(
             child: CustomTextWidget(
-              title: AppStrings.recentAssignments,
+              title: 'recentAssignments'.tr(),
               fontWeight: FontWeight.w600,
             ),
           ),
